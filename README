@@ -1,0 +1,120 @@
+== Welcome to ClockingIT v0.99.3
+
+ClockingIT is relased under the terms of the MIT License, see LICENSE
+for more information.
+
+== Getting started
+
+1. sudo apt-get install libmagick9-dev imagemagick ruby1.8 ruby1.8-dev rubygems ri rdoc rake
+
+2. ruby ./setup.rb
+   Follow the instructions and answer the questions.
+
+== Support
+
+* mailto:admin@clockingit.com
+* http://wiki.clockingit.com/wiki:source
+* http://forum.clockingit.com/
+
+== Example for Apache conf
+
+  <VirtualHost *:80>
+    ServerName *.clockingit.com
+    DocumentRoot /path/application/public/
+    ErrorLog /path/application/log/server.log
+
+    <Directory /path/application/public/>
+      Options ExecCGI FollowSymLinks
+      AllowOverride all
+      Allow from all
+      Order allow,deny
+    </Directory>
+  </VirtualHost>
+
+== Example for Apache using mod_rewrite
+
+This will redirect requests for http://server.my_domain.com to https://server.my_domain.com
+and will proxy requests for https://server.my_domain.com to http://hostname.clockingit.com:3000 on the localhost
+The end-user who is contacting server.my_domain.com does not know that the request is being proxied, because apache will change the "Host:" values to itself as it sends back the response. The proxy request is performed on the localhost, which is informed by /etc/hosts that hostname.clockingit.com points to 127.0.0.1
+
+### Insecure VirtualHost ###
+<VirtualHost *:80>
+ServerAdmin root@my_domain.com
+ServerName server.my_domain.com
+UseCanonicalName Off
+# Force clients from the Internet to use HTTPS
+RewriteEngine on
+RewriteRule ^/?(.*)$ https://server.my_domain.com/$1 [L,R]
+</VirtualHost>
+
+### SSL VirtualHost ###
+<VirtualHost *:443>
+ServerAdmin root@my_domain.com
+ServerName server.my_domain.com
+UseCanonicalName Off
+SSLCertificateFile /home/clockingit/ssl.cert.pem
+SSLCertificateKeyFile /home/clockingit/ssl.key.pem
+
+ProxyRequests Off
+<Proxy *>
+Order Allow,Deny
+Allow from all
+</Proxy>
+RewriteEngine On
+RewriteRule ^/(.*)$ http://hostname.clockingit.com:3000/$1 [P,NC]
+ProxyPassReverse / http://hostname.clockingit.com:3000/
+</VirtualHost>
+
+== Description of contents
+
+app
+  Holds all the code that's specific to this particular application.
+
+app/controllers
+  Holds controllers that should be named like weblog_controller.rb for
+  automated URL mapping. All controllers should descend from
+  ActionController::Base.
+
+app/models
+  Holds models that should be named like post.rb.
+  Most models will descend from ActiveRecord::Base.
+
+app/views
+  Holds the template files for the view that should be named like
+  weblog/index.rhtml for the WeblogController#index action. All views use eRuby
+  syntax. This directory can also be used to keep stylesheets, images, and so on
+  that can be symlinked to public.
+
+app/helpers
+  Holds view helpers that should be named like weblog_helper.rb.
+
+app/apis
+  Holds API classes for web services.
+
+config
+  Configuration files for the Rails environment, the routing map, the database, and other dependencies.
+
+components
+  Self-contained mini-applications that can bundle together controllers, models, and views.
+
+db
+  Contains the database schema in schema.rb.  db/migrate contains all
+  the sequence of Migrations for your schema.
+
+lib
+  Application specific libraries. Basically, any kind of custom code that doesn't
+  belong under controllers, models, or helpers. This directory is in the load path.
+
+public
+  The directory available for the web server. Contains subdirectories for images, stylesheets,
+  and javascripts. Also contains the dispatchers and the default HTML files.
+
+script
+  Helper scripts for automation and generation.
+
+test
+  Unit and functional tests along with fixtures.
+
+vendor
+  External libraries that the application depends on. Also includes the plugins subdirectory.
+  This directory is in the load path.

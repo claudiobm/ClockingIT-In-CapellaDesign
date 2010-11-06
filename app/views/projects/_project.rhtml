@@ -1,0 +1,55 @@
+<div id="<%=@project.dom_id%>" class="project-block">
+  <div class="project-heading hoverrow">
+    <% if @project.user_id == current_user.id || current_user.admin > 0%>
+    <div style="float:right;" class="project-action">
+      <%= link_to image_tag("application_form_edit.png", :border => 0, :title => _("Edit <b>%s</b>", @project.name), :class => "tooltip"), :controller => 'projects', :action => 'edit', :id => @project %> 
+      <%= link_to(image_tag("delete.png", :border => 0, :title => _("Delete <b>%s</b>", @project.name), :class => "tooltip"), { :controller => 'projects', :action => 'destroy', :id => @project}, :confirm => _("Are you sure?")) %>
+    </div>
+    <% end %>
+    <div class="project-name"><%= "<a href=\"/views/select_project/#{@project.id}\">#{h(@project.name)}</a>" %></div>
+  </div>
+  <div class="information-block">
+    <% if @project.users.size > 0 %>
+    <div>
+      <div class="information-header"><%= _('Members') %></div>
+      <div class="information-value" style="float:left;"><%= @project.users.collect{|u| "<a href=\"/views/select_user/#{u.id}\" class=\"tooltip\" title=\"#{_('Tasks')}: #{u.tasks.count(:conditions => ["project_id=? AND completed_at IS NULL",@project.id])}\"  >#{h(u.name)}</a>"}.join(", ") %></div>
+    </div>
+    <% end %>
+    <div style="clear:both;"></div>
+    <div class="information-header"><%= _('Created') %></div>
+    <div class="information-value"><%= tz.utc_to_local(@project.created_at).strftime("#{current_user.time_format} #{current_user.date_format}") %></div>
+
+    <div class="information-header"><%= _('Tasks') %></div>
+    <div class="information-value"><%= @project.tasks.count(:conditions => ["completed_at IS NULL"]) %> <%=_ 'Open' %> / <%= @project.tasks.count %> <%= _ 'Total' %></div>
+
+    <% done = @project.tasks.sum('work_logs.duration', :conditions => ['completed_at IS NULL'], :include => :work_logs )
+       total = @project.tasks.sum('duration', :conditions => ["completed_at IS NULL"])
+       completed = @project.tasks.sum('work_logs.duration', :conditions => ['completed_at IS NOT NULL'], :include => :work_logs )
+       completed_total = @project.tasks.sum('duration', :conditions => ["completed_at IS NOT NULL"])
+       total ||= 0
+       done ||= 0
+       completed ||= 0
+       completed_total ||= 0
+
+       done = done / 60
+       completed = completed / 60
+
+    %>
+
+    <div class="information-header"><%= _('Remaining Work') %></div>
+    <div class="information-value">
+      <% if total - done < 0 %>
+      -<%= format_duration(-(total-done), current_user.duration_format, current_user.workday_duration, current_user.days_per_week) %> 
+      <% else %>
+      <%= format_duration(total-done, current_user.duration_format, current_user.workday_duration, current_user.days_per_week) %> 
+      <% end %>
+      [<%= format_duration(total, current_user.duration_format, current_user.workday_duration, current_user.days_per_week) %> <%= _ 'Estimated' %>]</div>
+
+    <div class="information-header"><%= _('Work Done') %></div>
+    <div class="information-value"><%= format_duration(completed, current_user.duration_format, current_user.workday_duration, current_user.days_per_week) %> [<%= format_duration(completed_total, current_user.duration_format, current_user.workday_duration, current_user.days_per_week) %> <%= _ 'Estimated' %>]</div>
+
+    <div class="information-header">&nbsp;</div>
+    <div><p style="margin-bottom:0;"><%= @project.description %></p></div>
+
+  </div>
+</div>

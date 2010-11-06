@@ -1,0 +1,8 @@
+current_user.widgets.each do |widget|
+  if widget.configured?
+    page << "new Ajax.Request('/widgets/show/#{widget.id}', {asynchronous:true, evalScripts:true, onComplete:function(request){Element.hide('loading');portal.refreshHeights();}, onLoading:function(request){Element.show('loading');}});"
+  end   
+end 
+
+page.call "UpdateDnD"
+

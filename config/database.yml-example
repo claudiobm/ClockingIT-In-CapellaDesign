@@ -1,0 +1,26 @@
+development:
+  adapter: mysql
+  database: DATABASE
+  host: localhost
+  username: USERNAME
+  password: PASSWORD
+  encoding: utf8
+  SOCKET
+
+test:
+  adapter: mysql
+  database: DATABASE_test
+  host: localhost
+  username: USERNAME
+  password: PASSWORD
+  encoding: utf8
+  SOCKET
+
+production:
+  adapter: mysql
+  database: DATABASE
+  host: localhost
+  username: USERNAME
+  password: PASSWORD
+  encoding: utf8
+  SOCKET

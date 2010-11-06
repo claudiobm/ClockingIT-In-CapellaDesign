@@ -1,0 +1,15 @@
+*~
+*#
+\.#*
+*.bak
+_darcs
+\.svn
+/index
+/log
+/store
+/nbproject
+config/database.yml
+config/ferret_server.yml
+config/environment.rb
+config/juggernaut_config.yml
+semantic.cache

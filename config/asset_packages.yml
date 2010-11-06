@@ -1,0 +1,26 @@
+---
+javascripts:
+- base:
+  - prototype
+  - effects
+  - dragdrop
+  - controls
+  - application
+  - calendar
+  - calendar-en
+  - calendar-setup
+- tt:
+  - juggernaut_javascript
+  - tt
+- portal:
+  - prototype
+  - tz
+  - frontpage
+stylesheets:
+- base:
+  - scaffold
+- portal:
+  - portal
+- tt:
+  - calendar-system
+  - tt

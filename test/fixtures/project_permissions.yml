@@ -1,0 +1,76 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+admin:
+  id: 1
+  company: cit
+  project: test_project
+  user: admin
+  can_comment: 1
+  can_work: 1
+  can_report: 1
+  can_create: 1
+  can_edit: 1
+  can_reassign: 1
+  can_prioritize: 1
+  can_close: 1
+  can_grant: 1
+  can_milestone: 1
+fudge:
+  id: 2
+  company: fudge
+  project: fudge_project
+  user: fudge
+  can_comment: 1
+  can_work: 1
+  can_report: 1
+  can_create: 1
+  can_edit: 1
+  can_reassign: 1
+  can_prioritize: 1
+  can_close: 1
+  can_grant: 1
+  can_milestone: 1
+user:
+  id: 3
+  company: cit
+  project: test_project
+  user: tester
+  can_comment: 1
+  can_work: 1
+  can_report: 1
+  can_create: 1
+  can_edit: 1
+  can_reassign: 1
+  can_prioritize: 1
+  can_close: 1
+  can_grant: 1
+  can_milestone: 1
+user_limited:
+  id: 4
+  company: cit
+  project: test_project
+  user: tester_limited
+  can_comment: 1
+  can_work: 1
+  can_report: 0
+  can_create: 0
+  can_edit: 0
+  can_reassign: 0
+  can_prioritize: 0
+  can_close: 0
+  can_grant: 0
+  can_milestone: 0
+user_2nd_project:
+  id: 5
+  company: cit
+  project: completed_project
+  user: tester
+  can_comment: 1
+  can_work: 1
+  can_report: 1
+  can_create: 1
+  can_edit: 1
+  can_reassign: 1
+  can_prioritize: 1
+  can_close: 1
+  can_grant: 1
+  can_milestone: 1

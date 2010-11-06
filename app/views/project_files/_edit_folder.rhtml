@@ -1,0 +1,18 @@
+<fieldset id="edit_folder">
+<legend><%=_ 'Edit Folder' %></legend>
+
+<% form_remote_tag :url => {:action => 'update_folder', :id => @folder },
+                                   :loading => "Element.show('loading');",
+                                   :complete => "Element.hide('loading');" do  %>
+  <%= render :partial => "form_folder" %>
+  <label>&nbsp;</label><div class="buttons">
+  <%= submit_tag _("Update"), :class => 'nolabel' %>
+    <div style="padding-top:0.2em;"><span class="optional"> <%= _("or") %> </span>
+    <%= link_to_function _("Cancel") do |page|
+          page.hide 'inline_form'
+        end
+    %></div>
+  </div>
+<% end %>
+
+</fieldset>

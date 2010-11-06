@@ -1,0 +1,19 @@
+if session[:history] && session[:history][0] == '/search/search'
+  page.replace "task_#{@task.id}", :partial => "search/search_task", :locals => {:task => @task}
+  page.visual_effect(:highlight, "task_#{@task.id}", :duration => 2.0)
+else
+  page << "$$('.#{@task.dom_id}').each(function(e) {new Effect.Fade(e);});"
+end
+
+if session[:history] && session[:history][0] == '/activities/list'
+  page.delay(1) do 
+    current_user.widgets.each do |widget|
+      if widget.configured?
+        page << "new Ajax.Request('/widgets/show/#{widget.id}', {asynchronous:true, evalScripts:true, onComplete:function(request){Element.hide('loading');portal.refreshHeights();}, onLoading:function(request){Element.show('loading');}});"
+      end   
+    end 
+  end
+end 
+
+page.call "UpdateDnD"
+

@@ -1,0 +1,22 @@
+  <table class="content" width="100%" style="padding-left: 1em; padding-right: 1em;" cellpadding="0" cellspacing="0">
+  <tr>
+    <td colspan="6" class="page_header">
+      <%=_ 'Completed Projects' %>
+    </td>
+  </tr>
+  <tr><td colspan="2">&nbsp;</td></tr>
+  <tr>
+    <th align="left"><%=_ 'Name' %></th>
+    <th align="left"><%=_ 'Completed' %></th>
+    <th align="left"><%=_ 'Tasks' %></th>
+    <th align="left">&nbsp;</th>
+  </tr>
+  <% @completed_projects.each do |p| %>
+  <tr>
+    <td><%= "#{p.customer.name} / #{p.name}" %></td>
+    <td><%= tz.utc_to_local(p.completed_at).strftime(current_user.date_format) %></td>
+    <td><%= p.tasks.size %></td>
+    <td><%= link_to( _('Revert'), {:action => 'revert', :id => p}, :confirm => _("Really revert %s?", p.name) ) %></td>
+  </tr>
+  <% end %>
+  </table>

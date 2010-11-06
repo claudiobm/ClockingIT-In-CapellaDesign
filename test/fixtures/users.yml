@@ -1,0 +1,125 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+admin:
+  name: Erlend Simonsen
+  username: test
+  password: password
+  company: cit
+  email: admin@clockingit.com
+  last_login_at: <%= Time.now.utc.to_s(:db) %>
+  admin: 10
+  time_zone: Europe/Oslo
+  option_tracktime: 1
+  option_externalclients: 1
+  option_tooltips: 1
+  seen_news_id: null
+  last_project_id: null
+  last_seen_at: <%= Time.now.utc.to_s(:db) %>
+  last_ping_at: <%= Time.now.utc.to_s(:db) %>
+  last_milestone_id: 0
+  last_filter: 0
+  date_format: %d/%m/%Y
+  time_format: %H:%M
+  send_notifications: 1
+  receive_notifications: 1
+  uuid: 1234567890abcdefghijklmnopqrstuv
+  seen_welcome: 1
+  locale: en_US
+  duration_format: 3
+  workday_duration: 450
+  posts_count: 1
+  newsletter: 1
+  option_avatars: 1
+  autologin: 2234567890abcdefghijklmnopqrstuv
+fudge:
+  name: Fudgie
+  username: fudge
+  password: password
+  company: fudge
+  email: mr@fudgie.org
+  last_login_at: null
+  admin: 0
+  time_zone: Europe/London
+  option_tracktime: 1
+  option_externalclients: 1
+  option_tooltips: 1
+  seen_news_id: null
+  last_project_id: null
+  last_seen_at: null
+  last_ping_at: null
+  last_milestone_id: 0
+  last_filter: 0
+  date_format: %d/%m/%Y
+  time_format: %H:%M
+  send_notifications: 1
+  receive_notifications: 1
+  uuid: 3234567890abcdefghijklmnopqrstuv
+  seen_welcome: 1
+  locale: en_US
+  duration_format: 3
+  workday_duration: 450
+  posts_count: 0
+  newsletter: 1
+  option_avatars: 1
+  autologin: 4234567890abcdefghijklmnopqrstuv
+tester:
+  name: Test User
+  username: tester
+  password: password
+  company: cit
+  email: test@clockingit.com
+  last_login_at: null
+  admin: 0
+  time_zone: Europe/Oslo
+  option_tracktime: 1
+  option_externalclients: 1
+  option_tooltips: 1
+  seen_news_id: null
+  last_project_id: null
+  last_seen_at: <%= Time.now.utc.to_s(:db) %>
+  last_ping_at: <%= Time.now.utc.to_s(:db) %>
+  last_milestone_id: 0
+  last_filter: 0
+  date_format: %d/%m/%Y
+  time_format: %H:%M
+  send_notifications: 1
+  receive_notifications: 1
+  uuid: 5234567890abcdefghijklmnopqrstuv
+  seen_welcome: 1
+  locale: en_US
+  duration_format: 3
+  workday_duration: 450
+  posts_count: 1
+  newsletter: 1
+  option_avatars: 1
+  autologin: 6234567890abcdefghijklmnopqrstuv
+tester_limited:
+  name: Test User Limited
+  username: tester_limited
+  password: password
+  company: cit
+  email: tester@clockingit.com
+  last_login_at: null
+  admin: 0
+  time_zone: Europe/Oslo
+  option_tracktime: 1
+  option_externalclients: 1
+  option_tooltips: 1
+  seen_news_id: null
+  last_project_id: null
+  last_seen_at: null
+  last_ping_at: null
+  last_milestone_id: 0
+  last_filter: 0
+  date_format: %d/%m/%Y
+  time_format: %H:%M
+  send_notifications: 1
+  receive_notifications: 1
+  uuid: 7234567890abcdefghijklmnopqrstuv
+  seen_welcome: 1
+  locale: en_US
+  duration_format: 3
+  workday_duration: 450
+  posts_count: 1
+  newsletter: 1
+  option_avatars: 1
+  autologin: 8234567890abcdefghijklmnopqrstuv
