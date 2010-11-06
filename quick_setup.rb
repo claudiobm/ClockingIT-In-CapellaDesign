@@ -26,8 +26,6 @@ if missing_deps.size > 0
     puts "version of rmagick requires, please install version 1.5.14 instead: "
     puts "  sudo gem install rmagick -v 1.5.14 -r"
   end
-  
-  exit
 end
 
 system("rake db:schema:load RAILS_ENV=production")
