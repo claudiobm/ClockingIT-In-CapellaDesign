@@ -28,6 +28,17 @@ if missing_deps.size > 0
   end
 end
 
+puts "  log..."
+Dir.mkdir("log") rescue nil
+puts "  index..."
+Dir.mkdir("index") rescue nil
+puts "  store..."
+Dir.mkdir("store") rescue nil
+puts "  store/avatars..."
+Dir.mkdir("store/avatars") rescue nil
+puts "  store/logos..."
+Dir.mkdir("store/logos") rescue nil
+
 system("rake db:schema:load RAILS_ENV=production")
 system("rake db:migrate RAILS_ENV=production")
 
