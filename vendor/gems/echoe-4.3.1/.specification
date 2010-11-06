@@ -1,0 +1,147 @@
+--- !ruby/object:Gem::Specification 
+name: echoe
+version: !ruby/object:Gem::Version 
+  hash: 49
+  prerelease: false
+  segments: 
+  - 4
+  - 3
+  - 1
+  version: 4.3.1
+platform: ruby
+authors: 
+- Evan Weaver
+autorequire: 
+bindir: bin
+cert_chain: 
+- |
+  -----BEGIN CERTIFICATE-----
+  MIIDLjCCAhagAwIBAgIBADANBgkqhkiG9w0BAQUFADA9MQ0wCwYDVQQDDARldmFu
+  MRgwFgYKCZImiZPyLGQBGRYIY2xvdWRidXIxEjAQBgoJkiaJk/IsZAEZFgJzdDAe
+  Fw0wNzA5MTYxMDMzMDBaFw0wODA5MTUxMDMzMDBaMD0xDTALBgNVBAMMBGV2YW4x
+  GDAWBgoJkiaJk/IsZAEZFghjbG91ZGJ1cjESMBAGCgmSJomT8ixkARkWAnN0MIIB
+  IjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA5C0Io89nyApnr+PvbNFge9Vs
+  yRWAlGBUEMahpXp28VrrfXZT0rAW7JBo4PlCE3jl4nE4dzE6gAdItSycjTosrw7A
+  Ir5+xoyl4Vb35adv56TIQQXvNz+BzlqnkAY5JN0CSBRTQb6mxS3hFyD/h4qgDosj
+  R2RFVzHqSxCS8xq4Ny8uzOwOi+Xyu4w67fI5JvnPvMxqrlR1eaIQHmxnf76RzC46
+  QO5QhufjAYGGXd960XzbQsQyTDUYJzrvT7AdOfiyZzKQykKt8dEpDn+QPjFTnGnT
+  QmgJBX5WJN0lHF2l1sbv3gh4Kn1tZu+kTUqeXY6ShAoDTyvZRiFqQdwh8w2lTQID
+  AQABozkwNzAJBgNVHRMEAjAAMAsGA1UdDwQEAwIEsDAdBgNVHQ4EFgQU+WqJz3xQ
+  XSea1hRvvHWcIMgeeC4wDQYJKoZIhvcNAQEFBQADggEBAGLZ75jfOEW8Nsl26CTt
+  JFrWxQTcQT/UljeefVE3xYr7lc9oQjbqO3FOyued3qW7TaNEtZfSHoYeUSMYbpw1
+  XAwocIPuSRFDGM4B+hgQGVDx8PMGiJKom4qLXjO40UZsR7QyN/u869Vj45LURm6h
+  MBcPeqCASI+WNprj9+uZa2kmHiitrFqqfMBNlm5IFbn9XeYSta9AHVvs5QQqV2m5
+  hIPfLqCyxsn/YgOGvo6iwyQTWyTswamaAC3HRWZxIS1sfn/Ssqa7E7oQMkv5FAXr
+  x5rKePfXINf8XTJczkl9OBEYdE9aNdJsJpXD0asLgGVwBICS5Bjohp6mizJcDC1+
+  yZ0=
+  -----END CERTIFICATE-----
+
+date: 2010-05-01 00:00:00 -03:00
+default_executable: 
+dependencies: 
+- !ruby/object:Gem::Dependency 
+  name: gemcutter
+  prerelease: false
+  requirement: &id001 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 3
+        segments: 
+        - 0
+        version: "0"
+  type: :runtime
+  version_requirements: *id001
+- !ruby/object:Gem::Dependency 
+  name: rubyforge
+  prerelease: false
+  requirement: &id002 !ruby/object:Gem::Requirement 
+    none: false
+    requirements: 
+    - - ">="
+      - !ruby/object:Gem::Version 
+        hash: 3
+        segments: 
+        - 0
+        version: "0"
+  type: :runtime
+  version_requirements: *id002
+description: A Rubygems packaging tool that provides Rake tasks for documentation, extension compiling, testing, and deployment.
+email: ""
+executables: []
+
+extensions: []
+
+extra_rdoc_files: 
+- CHANGELOG
+- LICENSE
+- README
+- TODO
+- lib/echoe.rb
+- lib/echoe/extensions.rb
+- lib/echoe/platform.rb
+- lib/echoe/rubygems.rb
+files: 
+- CHANGELOG
+- LICENSE
+- MIT-LICENSE
+- Manifest
+- README
+- Rakefile
+- TODO
+- echoe.gemspec
+- lib/echoe.rb
+- lib/echoe/extensions.rb
+- lib/echoe/platform.rb
+- lib/echoe/rubygems.rb
+- vendor/rake/MIT-LICENSE
+- vendor/rake/lib/rake/contrib/compositepublisher.rb
+- vendor/rake/lib/rake/contrib/ftptools.rb
+- vendor/rake/lib/rake/contrib/publisher.rb
+- vendor/rake/lib/rake/contrib/rubyforgepublisher.rb
+- vendor/rake/lib/rake/contrib/sshpublisher.rb
+- vendor/rake/lib/rake/contrib/sys.rb
+has_rdoc: true
+homepage: http://blog.evanweaver.com/files/doc/fauna/echoe/
+licenses: []
+
+post_install_message: 
+rdoc_options: 
+- --line-numbers
+- --inline-source
+- --title
+- Echoe
+- --main
+- README
+require_paths: 
+- bin
+- lib
+required_ruby_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 3
+      segments: 
+      - 0
+      version: "0"
+required_rubygems_version: !ruby/object:Gem::Requirement 
+  none: false
+  requirements: 
+  - - ">="
+    - !ruby/object:Gem::Version 
+      hash: 11
+      segments: 
+      - 1
+      - 2
+      version: "1.2"
+requirements: []
+
+rubyforge_project: fauna
+rubygems_version: 1.3.7
+signing_key: 
+specification_version: 3
+summary: A Rubygems packaging tool that provides Rake tasks for documentation, extension compiling, testing, and deployment.
+test_files: []
+
