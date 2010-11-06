@@ -8,20 +8,6 @@ ENV['RAILS_ENV'] ||= 'production'
 require File.join(File.dirname(__FILE__), 'boot')
 
 Rails::Initializer.run do |config|
-  
-  config.gem 'fastercsv' 
-  config.gem 'tzinfo' 
-  config.gem 'ZenTest' 
-  config.gem 'mongrel' 
-  config.gem 'rake' 
-  config.gem 'RedCloth' 
-  config.gem 'echoe' 
-  config.gem 'ferret' 
-  config.gem 'json' 
-  config.gem 'eventmachine' 
-  config.gem 'icalendar' 
-  config.gem 'hoe'
-  
   # Settings in config/environments/* take precedence those specified here
 
   # Skip frameworks you're not going to use
